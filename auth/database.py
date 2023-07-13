@@ -8,7 +8,7 @@ from sqlalchemy import Integer, String, Boolean, DateTime, Numeric
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
-DATABASE_URL = "sqlite+aiosqlite:///bd.db"
+DATABASE_URL = "sqlite+aiosqlite:///./bd.db"
 
 
 class Base(DeclarativeBase):

@@ -46,6 +46,17 @@ app.include_router(
     prefix="/auth",
     tags=["auth"],
 )
+
+current_user = fastapi_users.current_user()
+
+
+@app.get("/get_data")
+def protected_route(user: User = Depends(current_user)):
+    return {
+        "Текущая зарплата": user.current_salary,
+        "Дата следующего повышения": user.date_of_next_increase
+    }
+
 # ALGORITHM = "HS256"
 # ACCESS_TOKEN_EXPIRE_MINUTES = 10
 
