@@ -56,8 +56,16 @@ ujson = "5.8.0"
 uvicorn = "0.23.0"
 watchfiles = "0.19.0"
 websockets = "11.0.3"
+pytest = "^7.4.0"
+pytest-asyncio = "^0.21.1"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = [
+  ".",
+]
+asyncio_mode="auto"
